@@ -107,6 +107,7 @@ func WeightRandom(serviceName string) string {
 		}
 	}
 	mutex.Lock()
+
 	defer mutex.Unlock()
 	serverIp.WriteString(serverList[rand.Intn(len(weightedList))]["ip"])
 	serverIp.WriteString(":")
